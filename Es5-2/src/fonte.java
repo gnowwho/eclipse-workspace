@@ -1,6 +1,8 @@
 import prog.io.ConsoleOutputManager;
 import prog.io.ConsoleInputManager;
 
+//This excercise was never finished and it's not expected to work
+
 class ordina{
 	
 	//chiede un numero intero con il messaggio s

@@ -1,12 +1,12 @@
 
 
-public class EleMemore<T extends Comparable<T>> implements Comparable<EleMemore<T>> {
+public class IndexableElement<T extends Comparable<T>> implements Comparable<IndexableElement<T>> {
 	//CAMPI
 	private T element;
 	private int index = -1;
 	
 	//COSTRUTTORI
-	public EleMemore(T ob, int ind){
+	public IndexableElement(T ob, int ind){
 		this.element=ob;
 		this.index=ind;
 	}
@@ -32,7 +32,7 @@ public class EleMemore<T extends Comparable<T>> implements Comparable<EleMemore<
 	//TODO equals
 	
 	@Override
-	public int compareTo(EleMemore<T> o) {
+	public int compareTo(IndexableElement<T> o) {
 		return (this.element).compareTo(o.element);
 	}
 	
