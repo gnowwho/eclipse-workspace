@@ -56,22 +56,33 @@ import java.util.Arrays;
 class p2q2soln {
 
 public static void main(String args[]) {
-         F<String> f = new F<String>();
+         F<String> f = new F<String>();	//qui chiamo la classe generica F assegnando String come parametro
 
          // Wrong way:   (comment the following line before submission)
-         //String[] stringArray = f.getArray();
+         //String[] stringArray =(String[]) f.getArray();
 
          // Correct way:
          ///////////// YOUR CODE HERE /////////////////////////////////
-         String[] stringArray = Arrays.copyOf(f.getArray(), f.getArray().length, String[].class); //boh
+         Object[] host = f.getArray();												//Soluzione
+         String[] stringArray = Arrays.copyOf(host, host.length, String[].class); 
          //////////////////////////////////////////////////////////////
 }
                         
 }
 
-class F<E> {
-private E[] myArray = (E[])new Object[10];
+class F<E> {								//la classe F ha solo il costruttore vuoto, un campo che è inizializzato come un array di Object non inizializzato e un solo metodo che lo restituisce
+private E[] myArray = (E[])new Object[10]; //L'array di E contiene Objects castati forzatamente a E
 public E[] getArray() {
-         return myArray;
+         return myArray;				//il riferimento ha tipo E[], ma le istanze tipo Object[]
 }
 }
+
+/*Perchè la soluzione funziona: 
+Poichè passo un riferimento con tipo String[] ma con dentro Object il compilatore non si lamenta, perchè il 
+riferimento ha il tipo giusto, ma in esecuzione conosco solo il tipo degli oggetti, non quelli del riferimento, 
+e la JVM si trova a dover castare Object in String, e non riesce.
+Quindi lo mettiamo in un array di Object, e il compilatore non si lamenta perchè String è subclass di Object
+poi usiamo copyOf specificando di voler produrre una copia del tipo String[].class che alla peggio gestisce la cosa 
+al runtime con un throw ArrayStoreException
+
+*/
