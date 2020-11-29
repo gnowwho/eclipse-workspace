@@ -17,10 +17,26 @@ enum Anno{
 		case ott: return "Ottobre";
 		case nov: return "Novembre";
 		case dic: return "Dicembre";
-		default: return ""; //immagino si possano implementare sottoclassi
+		default: return ""; //serve o non compila.
 		}
 	}
+	
+	public Anno precedente() {
+		if (this.ordinal()!=0) {
+			return values()[this.ordinal()-1];
+		}
+		else return dic;
+	}
+	
+	public Anno successivo() {
+		if (this.ordinal()!=11) {
+			return values()[this.ordinal()+1];
+		}
+		else return gen;
+	}
 }
+
+
 
 public class ProveEnumerative {
 
@@ -31,7 +47,8 @@ public class ProveEnumerative {
 		if (piglia[0].getClass() == Anno.class) {
 			pnt = (Anno) piglia[0];
 			System.out.println("tipo di " + pnt.name() + " è " + Anno.class );
-			System.out.println(pnt.toString());
+			pnt=pnt.precedente();
+			System.out.println("e prima viene " + pnt.toString());
 		}
 
 	}
