@@ -6,10 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/gnowwho/Documents/prog-4ed.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="/home/gnowwho/Documents/prog-4ed.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
