@@ -192,7 +192,9 @@ public class SW_alignment {
 			System.out.println(seq1.charAt(j));
 			
 			// we print the alignment matrix going willingly in overfloat and making correspondances with the
-			//padding of zeroes we created
+			// padding of zeroes we created
+			// WARNING: the cell (i,j) is calculated in regards to the characters of index i-1 and j-1 in the 
+			// two seq after zero is added
 			System.out.println("-------------------------------------");
 			System.out.println();
 			System.out.print(" |");
@@ -204,13 +206,15 @@ public class SW_alignment {
 				System.out.print(seq1.charAt(j) + "|"); //a inizio riga metto il carattere
 				for (i=0; i<seq2.length(); i++) {
 					try {
-						System.out.print(numberFormat.format(scorematrix[i][j]) + "\t|");
+						System.out.print(numberFormat.format(scorematrix[i+1][j+1]) + "\t|");
 					} catch (ArrayIndexOutOfBoundsException e) {
 						System.out.print("x \t|"); //quanto è bad practice fare questa cosa?
 					}
 				}
 			System.out.println(); //a fine riga vado a capo
 			}
+			//we observe that the raw and column of idex 0 are excluded from this print. A padding could be added
+			//to the sequences to correct that and reindicize the sequences virtually starting from -1
 		}
 	}
 
