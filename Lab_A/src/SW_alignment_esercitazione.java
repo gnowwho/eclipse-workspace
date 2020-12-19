@@ -1,5 +1,3 @@
-import java.io.*;
-
 public class SW_alignment_esercitazione {
 
 	public static void main(String[] args) {

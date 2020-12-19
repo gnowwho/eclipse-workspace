@@ -55,6 +55,7 @@ import java.util.Arrays;
 
 class p2q2soln {
 
+@SuppressWarnings("unused")
 public static void main(String args[]) {
          F<String> f = new F<String>();	//qui chiamo la classe generica F assegnando String come parametro
 
@@ -71,6 +72,7 @@ public static void main(String args[]) {
 }
 
 class F<E> {								//la classe F ha solo il costruttore vuoto, un campo che è inizializzato come un array di Object non inizializzato e un solo metodo che lo restituisce
+@SuppressWarnings("unchecked")
 private E[] myArray = (E[])new Object[10]; //L'array di E contiene Objects castati forzatamente a E
 public E[] getArray() {
          return myArray;				//il riferimento ha tipo E[], ma le istanze tipo Object[]

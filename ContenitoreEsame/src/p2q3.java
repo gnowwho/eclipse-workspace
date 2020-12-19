@@ -250,7 +250,8 @@ public static void main(String[] args) throws IOException{
                          System.out.println("\nScore: " + bestScore + " [" + max_x +"][" + max_y + "]\n");
                          showPath( seq1, seq2, false); //altrimenti stampo 0
                  }
-         }        
+         }
+         linereader.close();
          System.out.println(". . . . . . . . . . . . . . . . . . . . . . . . .");
          System.out.println("Best Score: " + f_score);
          System.out.println(" " + f1 + "\n " + f2);        
