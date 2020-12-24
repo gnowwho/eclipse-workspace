@@ -1,4 +1,4 @@
-package Sequences;
+package MyDataToBio.Sequences;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -16,5 +16,19 @@ public class RnaSequence extends AbstractSequence {
 
 	public RnaSequence(String header, String sequence){
 		super(header, sequence);
-	}	
+	}
+	
+	public DnaSequence toDna() {
+		String[] basi = this.sequence.split("");
+		String seqParziale = "";
+		for(String base:basi) {
+			if(base.equals("U")){
+				seqParziale = seqParziale + "T";
+			}else{
+				seqParziale = seqParziale + base;
+			}
+		}
+		return new DnaSequence(this.header,seqParziale);
+	}
+	
 }

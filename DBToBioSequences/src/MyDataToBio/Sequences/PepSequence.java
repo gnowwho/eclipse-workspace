@@ -1,4 +1,4 @@
-package Sequences;
+package MyDataToBio.Sequences;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;

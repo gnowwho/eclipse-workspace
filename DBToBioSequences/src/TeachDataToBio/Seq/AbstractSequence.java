@@ -1,6 +1,5 @@
-package Sequences;
-
-import java.util.Set;
+package TeachDataToBio.Seq;
+import java.util.*;
 
 public abstract class AbstractSequence {
 
@@ -23,7 +22,7 @@ public abstract class AbstractSequence {
 		this.sequence = sequence;
 	}
 
-	public abstract Set<Character> getAlphabet();
+	public abstract Set<Character> getAlphabet();	// Abstract method
 
 	public float getRatioValid(){
 		Set<Character> set = getAlphabet();
@@ -35,18 +34,15 @@ public abstract class AbstractSequence {
 		}
 		return numValid/sequence.length();
 	}
-	
-	public void printFasta(int tokensLength){
+
+	public void printFasta(){
 		System.out.println(">"+header);
+		int tokenslength = 60;    // 60 characters (FASTA standard)
 		// spezza stringa in sottostringhe di tokenslength caratteri e le salva in String array
-		String[] seqlines = this.sequence.split(String.format("(?<=\\G.{%1$d})", tokensLength));
+		String[] seqlines = this.sequence.split(String.format("(?<=\\G.{%1$d})", tokenslength));
 		for(String s: seqlines) {
 			System.out.println(s);        // stampa fullsequence in righe di tokenslength caratteri
 		}
-	}
-	
-	public void printFasta(){
-		this.printFasta(60); //standard FASTA lenght
 	}
 
 	public AbstractSequence(String header, String sequence){

@@ -1,10 +1,10 @@
-package Sequences;
+package MyDataToBio.Sequences;
 
 import java.io.*;
 import java.util.*;
 
 
-public class FastaReader {
+public class FastaFileReader {
 
 	//Reads fasta as DnaSequence.
 	public static List<DnaSequence> readFasta(String inputfile) throws FileNotFoundException {

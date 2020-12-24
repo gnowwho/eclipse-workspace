@@ -1,3 +1,4 @@
+package TeachDataToBio.Seq;
 //Implementazione lezione
 
 import java.util.Collections;
