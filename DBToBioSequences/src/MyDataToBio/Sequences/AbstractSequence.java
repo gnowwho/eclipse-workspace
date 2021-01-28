@@ -9,6 +9,12 @@ public abstract class AbstractSequence {
 	protected String header;
 
 //methods
+	//constructors
+	public AbstractSequence(String header, String sequence){
+		this.header = header;
+		this.sequence = sequence;
+	}
+	
 	//GET and SET-------------------------------
 	public String getHeader(){
 		return header;	
@@ -82,9 +88,6 @@ public abstract class AbstractSequence {
 		this.printFasta(60); //standard FASTA lenght
 	}
 
-	public AbstractSequence(String header, String sequence){
-		this.header = header;
-		this.sequence = sequence;
-	}
+	
 
 }

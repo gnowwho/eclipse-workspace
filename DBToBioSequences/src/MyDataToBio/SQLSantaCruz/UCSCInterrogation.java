@@ -7,7 +7,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 import MyDataToBio.Sequences.*;
 
 
@@ -31,7 +30,7 @@ public class UCSCInterrogation {
 	// Esegue una query SQL data la stringa che la contiene e una HashMap contenente i parametri di connessione
 	// Li passa in una lista di DnaSequence; null se non ha letto
 	//NB: prevede la conoscenza delle colonne nel set di risultati
-	public List<DnaSequence> AskMRNA(String myStatmnt){
+	public ArrayList<DnaSequence> AskMRNA(String myStatmnt){
 		ArrayList<DnaSequence> seqOut = null;
 		
 		try(
@@ -93,7 +92,7 @@ public class UCSCInterrogation {
 	}
 
 
-	public List<PepSequence> AskPep(String myStatmnt){
+	public ArrayList<PepSequence> AskPep(String myStatmnt){
 			ArrayList<PepSequence> pepList = null;
 		try(
 				Connection conn = DriverManager.getConnection(
